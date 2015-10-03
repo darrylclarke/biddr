@@ -1,0 +1,12 @@
+$(".previous-bids").prepend("<%= j render 'bid', bid: @bid %>" );
+$("#current-price").text("<%=@auction.current_price %>")
+
+/*
+<%# We need to reinstantiate the @answer variable in here because the @answer
+    variable references a record that thas already been created in the database
+	so the form will use PATCH and submit to the update action.  We want the
+	form to submit to the create action. %>
+*/	
+<% @bid = Bid.new %>
+$("#bid_amount").val("");
+$("#new_bid").replaceWith( "<%= j render 'form' %>");

@@ -1,0 +1,45 @@
+<h1>Auction Details</h1>
+
+<table style="width:100%">
+  <!--<tr>
+    <th>Field</th>
+    <th>Details</th>
+  </tr>-->
+  <tr>
+    <td>Title</td>
+    <td><%= @auction.title %></td>
+  </tr>
+  <tr>
+    <td>Details</td>
+    <td><%= @auction.details %></td>
+  </tr>
+  <tr>
+    <td>Ends On</td>
+    <td><%= @auction.end_date_time %></td>
+  </tr>
+  <tr>
+    <td>Reserve Price</td>
+    <td><%= @auction.reserve_price %></td>
+  </tr> 
+  <tr>
+    <td>State</td>
+    <td><%= @auction.aasm_state %></td>
+  </tr>         
+  <tr>
+    <td>Current Price</td>
+    <td id="current-price"><%= @auction.current_price %></td>
+  </tr>  
+ </table>
+<p>
+
+<!---Make a bid------------------------------------------------------------------>
+<%= render "/bids/form" %>
+
+
+<!---Previous bids------------------------------------------------------------------>
+<h2>Previous Bids</h2>
+<ul class="previous-bids">
+<% @auction.ordered_bids.each do |bid| %>
+    <%= render "/bids/bid", bid: bid %>
+<% end %>
+</ul>

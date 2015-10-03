@@ -1,0 +1,20 @@
+<h1>All Auctions</h1>
+
+<table style="width:100%">
+  <tr>
+    <th>Title</th>
+    <th>Details</th>
+    <th>Ends on</th>
+    <th>Reserve Price</th>
+    <th>State</th>
+  </tr>
+	<% @auctions.each do |auction| %>
+		<tr>
+			<td><%= link_to auction.title, auction_path(auction) %></td>
+			<td><%= auction.details %></td>
+			<td><%= auction.end_date_time %></td>
+			<td><%= auction.reserve_price %></td>
+			<td><%= auction.aasm_state.to_s %></td>
+		</tr>     
+	<% end %> 
+</table>

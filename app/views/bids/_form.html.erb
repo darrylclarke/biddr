@@ -1,0 +1,4 @@
+<%= simple_form_for [@auction, @bid], remote: true do |f| %>
+    <%= f.input :amount %>
+    <%= f.submit "Make your bid"%>
+<% end %>

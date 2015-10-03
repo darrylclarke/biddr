@@ -1,0 +1,9 @@
+<%= simple_form_for @auction, url: auctions_path do |f| %>
+	<%= f.input :title %>
+	<%= f.input :details  %>
+	<%= f.input :end_date_time      %>
+	<%= f.input :reserve_price %>
+	<div class="form-group">
+		<%= f.submit class: "btn btn-primary" %>
+	</div>	
+<% end %>

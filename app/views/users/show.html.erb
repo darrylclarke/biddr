@@ -1,0 +1,17 @@
+<h1>Successful bids for <%= @user.full_name %></h1>
+
+<table>
+	<tr>
+		<th>Auction</th>
+		<th>Date</th>
+		<th>Bid Amount</th>
+	</tr>
+		
+	<% @user.bids.each do |bid| %>
+	<tr>
+		<td><%= bid.auction.title %></td>
+		<td><%= bid.date_time     %></td>
+		<td>$<%= bid.amount        %></td>
+	</tr>
+	<% end %>
+</table>
