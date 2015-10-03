@@ -1,6 +1,6 @@
 $(".previous-bids").prepend("<%= j render 'bid', bid: @bid %>" );
-$("#current-price").text("<%=@auction.current_price %>")
-
+$("#current-price").text("<%=@auction.current_price %>");
+$(".previous-bids").children().eq(0).fadeIn(1000);
 /*
 <%# We need to reinstantiate the @answer variable in here because the @answer
     variable references a record that thas already been created in the database
